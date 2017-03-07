@@ -4,15 +4,15 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Created by dzq on 16/7/21.
+ * 判空格式化工具
+ * <p>
+ * </> Created by weiyaling on 2017/3/7.
  */
+
 public class IsEmpty {
+
   public static boolean list(List object) {
-    if (null == object || object.size() == 0) {
-      return true;
-    } else {
-      return false;
-    }
+    return null == object || object.size() == 0;
   }
 
   // 判断所有的list是否都为空或者null
@@ -28,19 +28,11 @@ public class IsEmpty {
   }
 
   public static boolean list(Set object) {
-    if (null == object || object.size() == 0) {
-      return true;
-    } else {
-      return false;
-    }
+    return null == object || object.size() == 0;
   }
 
   public static boolean string(String object) {
-    if (null == object || "".equals(object)) {
-      return true;
-    } else {
-      return false;
-    }
+    return null == object || "".equals(object);
   }
 
   public static boolean string(String... objects) {
@@ -77,10 +69,6 @@ public class IsEmpty {
   }
 
   public static boolean object(Object object) {
-    if (null == object) {
-      return true;
-    } else {
-      return false;
-    }
+    return null == object;
   }
 }

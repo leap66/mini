@@ -8,7 +8,9 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 /**
- * Created by dzq on 2016/10/19.
+ * JSON格式化工具
+ * <p>
+ * </> Created by weiyaling on 2017/3/7.
  */
 
 public class GsonUtil {

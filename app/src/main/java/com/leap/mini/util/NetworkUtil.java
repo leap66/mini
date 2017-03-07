@@ -9,8 +9,11 @@ import android.os.Build;
 import android.support.annotation.NonNull;
 
 /**
- * Created by dzq on 16/7/12.
+ * 网络连接判断工具
+ * <p>
+ * </> Created by weiyaling on 2017/3/7.
  */
+
 public class NetworkUtil {
 
   public static boolean isConnected(@NonNull Context context) {

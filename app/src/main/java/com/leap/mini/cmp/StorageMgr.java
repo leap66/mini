@@ -1,9 +1,9 @@
 package com.leap.mini.cmp;
 
+import com.leap.mini.util.GsonUtil;
+
 import android.content.Context;
 import android.content.SharedPreferences;
-
-import com.leap.mini.util.GsonUtil;
 
 public class StorageMgr {
   private static SharedPreferences storage;
@@ -11,7 +11,7 @@ public class StorageMgr {
   public static String LEVEL_GLOBAL = "global";// 全局级别
 
   public static void init(Context context) {
-    storage = context.getSharedPreferences("qianfan123", Context.MODE_PRIVATE);
+    storage = context.getSharedPreferences("leap", Context.MODE_PRIVATE);
   }
 
   // 设置缓存信息
@@ -79,36 +79,37 @@ public class StorageMgr {
    * @throws Exception
    */
   public static void set(String key, String value, String level) throws RuntimeException {
-//    BSessionUser user = SessionMgr.getUser();
-//    BSessionShop shop = SessionMgr.getShop();
-//    String k = "";
-//    if (level.equals(StorageMgr.LEVEL_USER) || level.equals(StorageMgr.LEVEL_SHOP)) {
-//      if (!IsEmpty.object(user)) {
-//        k += user.getId();
-//      } else {
-//        throw new NullPointerException("用户为空");
-//      }
-//      k += "_";
-//    }
-//    if (level.equals(StorageMgr.LEVEL_SHOP)) {
-//      if (!IsEmpty.object(shop)) {
-//        k += shop.getId();
-//      } else {
-//        throw new NullPointerException("门店为空");
-//      }
-//      k += "_";
-//    }
-//    k += key;
-//    setStorage(k, value);
+    // BSessionUser user = SessionMgr.getUser();
+    // BSessionShop shop = SessionMgr.getShop();
+    // String k = "";
+    // if (level.equals(StorageMgr.LEVEL_USER) ||
+    // level.equals(StorageMgr.LEVEL_SHOP)) {
+    // if (!IsEmpty.object(user)) {
+    // k += user.getId();
+    // } else {
+    // throw new NullPointerException("用户为空");
+    // }
+    // k += "_";
+    // }
+    // if (level.equals(StorageMgr.LEVEL_SHOP)) {
+    // if (!IsEmpty.object(shop)) {
+    // k += shop.getId();
+    // } else {
+    // throw new NullPointerException("门店为空");
+    // }
+    // k += "_";
+    // }
+    // k += key;
+    // setStorage(k, value);
   }
 
   // 获取缓存信息
   public static String getStorage(String key) {
-    String value="";
+    String value = "";
     try {
-      value=storage.getString(key, null);
-    }catch (NullPointerException e){
-//      throw e;
+      value = storage.getString(key, null);
+    } catch (NullPointerException e) {
+      // throw e;
     }
     return value;
   }
@@ -172,23 +173,24 @@ public class StorageMgr {
    * @throws Exception
    */
   public static String get(String key, String level) {
-//    BSessionUser user = SessionMgr.getUser();
-//    BSessionShop shop = SessionMgr.getShop();
-//    String k = "";
-//    if (level.equals(StorageMgr.LEVEL_USER) || level.equals(StorageMgr.LEVEL_SHOP)) {
-//      if (!IsEmpty.object(user)) {
-//        k += user.getId();
-//      }
-//      k += "_";
-//    }
-//    if (level.equals(StorageMgr.LEVEL_SHOP)) {
-//      if (!IsEmpty.object(shop)) {
-//        k += shop.getId();
-//      }
-//      k += "_";
-//    }
-//    k += key;
-//    return getStorage(k);
+    // BSessionUser user = SessionMgr.getUser();
+    // BSessionShop shop = SessionMgr.getShop();
+    // String k = "";
+    // if (level.equals(StorageMgr.LEVEL_USER) ||
+    // level.equals(StorageMgr.LEVEL_SHOP)) {
+    // if (!IsEmpty.object(user)) {
+    // k += user.getId();
+    // }
+    // k += "_";
+    // }
+    // if (level.equals(StorageMgr.LEVEL_SHOP)) {
+    // if (!IsEmpty.object(shop)) {
+    // k += shop.getId();
+    // }
+    // k += "_";
+    // }
+    // k += key;
+    // return getStorage(k);
     return null;
   }
 }

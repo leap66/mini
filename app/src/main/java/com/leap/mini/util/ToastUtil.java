@@ -1,30 +1,30 @@
 package com.leap.mini.util;
 
+import com.leap.mini.databinding.ItemToastBinding;
+import com.qianfan123.minya.R;
 
 import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.Toast;
 
-import com.qianfan123.minya.R;
-import com.qianfan123.minya.databinding.ItemToastBinding;
-
 /**
- * Created by dzq on 2016/10/19.
+ * Toast 格式化工具
+ * <p>
+ * </> Created by weiyaling on 2017/3/7.
  */
 
 public class ToastUtil {
 
   public static void toastHint(Context context, int stringResId) {
     String s = context.getResources().getString(stringResId);
-    toastHint(context, s);
+    toast(context, s, 0);
   }
 
   public static void toastHint(Context context, String text) {
-    Toast toast = Toast.makeText(context, text, Toast.LENGTH_SHORT);
-    toast.setGravity(Gravity.CENTER, 0, 0);
-    toast.show();
+    toast(context, text, 0);
   }
 
   public static void toastFailure(Context context, int stringResId) {
@@ -51,7 +51,11 @@ public class ToastUtil {
     Toast toast = new Toast(context);
     toast.setDuration(Toast.LENGTH_SHORT);
     toast.setGravity(Gravity.CENTER, 0, 0);
-    binding.imageIv.setImageResource(imageResource);
+    if (0 == imageResource) {
+      binding.imageIv.setVisibility(View.GONE);
+    } else {
+      binding.imageIv.setImageResource(imageResource);
+    }
     binding.titleTv.setText(text);
     toast.setView(binding.getRoot());
     toast.show();

@@ -6,7 +6,9 @@ import java.util.Date;
 import java.util.Locale;
 
 /**
- * Created by dzq on 2016/10/19.
+ * 日期格式化工具
+ * <p>
+ * </> Created by weiyaling on 2017/3/7.
  */
 
 public class DateUtil {

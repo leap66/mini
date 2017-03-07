@@ -1,7 +1,9 @@
 package com.leap.mini.util;
 
 /**
- * Created by ditclear on 16/7/16.
+ * 手机分辨率转换工具
+ * <p>
+ * </> Created by weiyaling on 2017/3/7.
  */
 
 import android.content.Context;

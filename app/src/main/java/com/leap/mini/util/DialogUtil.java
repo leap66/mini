@@ -1,19 +1,21 @@
 package com.leap.mini.util;
 
-import com.qianfan123.minya.R;
 import com.leap.mini.widget.sweetAlert.SweetAlertDialog;
+import com.qianfan123.minya.R;
 
 import android.content.Context;
 import android.support.v4.content.ContextCompat;
 
 /**
- * 页面描述：
+ * 页面描述：对话框工具
  * <p>
- * Created by ditclear on 16/10/15.
+ * Created by weiyaling on 17/3/7.
  */
 public class DialogUtil {
 
-  // 获取对话框
+  /**
+   * 加载进度对话框
+   */
   public static SweetAlertDialog getProgressDialog(Context context) {
     SweetAlertDialog dialog = new SweetAlertDialog(context, SweetAlertDialog.PROGRESS_TYPE);
     dialog.setTitleText(context.getResources().getString(R.string.load_data));
@@ -22,6 +24,9 @@ public class DialogUtil {
     return dialog;
   }
 
+  /**
+   * 加载进度对话框
+   */
   public static SweetAlertDialog getProgressDialog(Context context, int stringResourceId) {
     SweetAlertDialog dialog = new SweetAlertDialog(context, SweetAlertDialog.PROGRESS_TYPE);
     dialog.setTitleText(context.getResources().getString(stringResourceId));
@@ -29,6 +34,9 @@ public class DialogUtil {
     return dialog;
   }
 
+  /**
+   * 加载进度对话框
+   */
   public static SweetAlertDialog getProgressDialog(Context context, String string) {
     SweetAlertDialog dialog = new SweetAlertDialog(context, SweetAlertDialog.PROGRESS_TYPE);
     dialog.setTitleText(string);
@@ -36,6 +44,9 @@ public class DialogUtil {
     return dialog;
   }
 
+  /**
+   * 显示错误对话框
+   */
   public static SweetAlertDialog showError(Context context, String string) {
     SweetAlertDialog dialog = new SweetAlertDialog(context, SweetAlertDialog.ERROR_TYPE);
     dialog.setConfirmText(context.getString(R.string.ok));
@@ -44,6 +55,9 @@ public class DialogUtil {
     return dialog;
   }
 
+  /**
+   * 确认对话框
+   */
   public static SweetAlertDialog getConfirmDialog(Context context, String title) {
     final SweetAlertDialog dialog = new SweetAlertDialog(context, SweetAlertDialog.WARNING_TYPE);
     dialog.setTitleText(title);

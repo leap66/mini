@@ -11,20 +11,17 @@ import android.view.WindowManager;
 
 /**
  * 功能描述 设备信息获取工具
- *
+ * <p>
+ * </> Created by weiyaling on 2017/3/7.
  */
+
 public class DeviceInfoUtil {
-  private DeviceInfoUtil() {
-  }
 
   public static final String TAG = DeviceInfoUtil.class.getSimpleName();
 
   /**
    * 
    * 功能描述：获取移动设备国际码（设备唯一性），如果获取失败，则返回"000000000000000"
-   * 
-   * @param context
-   * @return
    */
   public static String getDeviceId(Context context) {
     String imei = null;
@@ -36,9 +33,6 @@ public class DeviceInfoUtil {
   /**
    * 
    * 功能描述：GPS是否可用
-   * 
-   * @param mContext
-   * @return
    */
   public static boolean isGpsEnabled(Context mContext) {
     LocationManager mLocationManager = (LocationManager) mContext
@@ -49,9 +43,6 @@ public class DeviceInfoUtil {
   /**
    * 
    * 功能描述：获取屏幕宽度
-   * 
-   * @param mActivity
-   * @return
    */
   public static int getDisplayWidthPixels(Activity mActivity) {
     DisplayMetrics dm = new DisplayMetrics();
@@ -62,9 +53,6 @@ public class DeviceInfoUtil {
   /**
    * 
    * 功能描述：获取屏幕高度
-   * 
-   * @param context
-   * @return
    */
   public static int getDisplayHeightPixels(Context context) {
     DisplayMetrics dm = new DisplayMetrics();
@@ -77,7 +65,6 @@ public class DeviceInfoUtil {
    * 
    * 功能描述：获取WIFI地址
    * 
-   * @param mContext
    * @return 返回wifi地址，如果失败返回0.0.0.0
    */
   public static String getWIFIIPAddress(Context mContext) {
@@ -98,9 +85,6 @@ public class DeviceInfoUtil {
   /**
    * 
    * 功能描述：开启或关闭WIFI
-   * 
-   * @param mContext
-   * @param isOpen
    */
   public static void setWifiStatus(Context mContext, boolean isOpen) {
     WifiManager wifiManager = (WifiManager) mContext.getSystemService(Context.WIFI_SERVICE);

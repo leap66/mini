@@ -8,6 +8,12 @@ import java.util.Hashtable;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * 字符串格式化工具
+ * <p>
+ * </> Created by weiyaling on 2017/3/7.
+ */
+
 public class StringUtil {
 
   private StringUtil() {

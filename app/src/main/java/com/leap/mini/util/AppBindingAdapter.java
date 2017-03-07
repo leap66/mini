@@ -11,7 +11,10 @@ import android.widget.TextView;
 
 /**
  * 数据绑定的adapter 用于处理自定义的xml中的属性操作
+ * <p>
+ * </> Created by weiyaling on 2017/3/7.
  */
+
 public class AppBindingAdapter {
 
   @BindingAdapter("imageResourceId")

@@ -24,7 +24,6 @@ import android.widget.EditText;
  */
 
 public abstract class BaseActivity extends AppCompatActivity {
-
   private boolean isAutomaticHide = false;
 
   @Override
@@ -54,8 +53,6 @@ public abstract class BaseActivity extends AppCompatActivity {
 
   /**
    * 设置软键盘是否自动隐藏
-   * 
-   * @param b
    */
   protected void setAutomaticHide(boolean b) {
     this.isAutomaticHide = b;
@@ -73,8 +70,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         im.hideSoftInputFromWindow(v.getWindowToken(), 0);
       }
       return super.dispatchTouchEvent(ev);
-    }
-    if (getWindow().superDispatchTouchEvent(ev)) {
+    } else if (getWindow().superDispatchTouchEvent(ev)) {
       return true;
     }
     return onTouchEvent(ev);
@@ -92,12 +88,9 @@ public abstract class BaseActivity extends AppCompatActivity {
       int top = leftTop[1];
       int bottom = top + v.getHeight();
       int right = left + v.getWidth();
-      if (event.getX() > left && event.getX() < right && event.getY() > top
-          && event.getY() < bottom) {
-        return false;
-      } else {
-        return true;
-      }
+      boolean ensure = event.getX() > left && event.getX() < right && event.getY() > top
+          && event.getY() < bottom;
+      return !ensure;
     }
     return false;
   }
@@ -110,7 +103,6 @@ public abstract class BaseActivity extends AppCompatActivity {
 
   @Subscribe(threadMode = ThreadMode.MAIN)
   public void handleTokenExpired(AuthEvent event) {
-    // 如果删除成功，就将详情页设置为前一页
     if (event.type == AuthEvent.TOKEN_EXPIRED) {
       ToastUtil.toastHint(this, R.string.newwork_request_err_401);
       logout();
