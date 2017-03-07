@@ -22,9 +22,9 @@ def gitVersionName() {
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.0"
+    buildToolsVersion "25.0.1"
     defaultConfig {
-        applicationId "com.qianfan.minya"
+        applicationId "com.leap.mini"
         minSdkVersion 15
         targetSdkVersion 25
         versionCode 1
@@ -36,7 +36,7 @@ android {
     buildTypes {
         debug {
             applicationIdSuffix ".debug"
-            manifestPlaceholders = [app_name: "千帆外勤-测试"]
+            manifestPlaceholders = [app_name: "mini-测试"]
         }
 
         release {
@@ -53,13 +53,13 @@ android {
             initWith(buildTypes.release)
 
             applicationIdSuffix ".branch"
-            manifestPlaceholders = [app_name: "千帆外勤-分支"]
+            manifestPlaceholders = [app_name: "mini-分支"]
         }
 
         scm {
             initWith(buildTypes.debug)
             applicationIdSuffix ".scm"
-            manifestPlaceholders = [app_name: "千帆外勤-分销"]
+            manifestPlaceholders = [app_name: "mini-功能"]
         }
     }
     dataBinding {
@@ -79,7 +79,7 @@ android {
         variant.outputs.each { output ->
             def outputFile = output.outputFile
             if (outputFile != null && outputFile.name.endsWith('.apk')) {
-                def fileName = "laya-${variant.buildType.name}-${versionName}-${versionCode}.apk"
+                def fileName = "mini-${variant.buildType.name}-${versionName}-${versionCode}.apk"
                 output.outputFile = new File(outputFile.parent, fileName)
             }
         }
@@ -104,7 +104,7 @@ dependencies {
     compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
     compile 'io.reactivex:rxandroid:1.2.1'
     compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
-    compile 'com.android.support:multidex:1.0.0'
+    compile 'com.android.support:multidex:1.0.1'
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'com.tonicartos:superslim:0.4.13'
     compile 'com.github.bumptech.glide:glide:3.7.0'
