@@ -1,0 +1,114 @@
+apply plugin: 'com.android.application'
+
+def gitVersionCode() {
+    def cmd = 'git rev-list HEAD --first-parent --count'
+    cmd.execute().text.trim().toInteger()
+}
+
+def gitVersionName() {
+    def cmd = 'git describe --tags'
+    def version = cmd.execute().text.trim()
+    def pattern = "-(\\d+)-g"
+    def matcher = version =~ pattern
+    if (matcher) {
+        version = version.substring(0, matcher.start()) + "." + matcher[0][1]
+    } else if (version) {
+        version = version + ".0"
+    } else {
+        version = 0.0
+    }
+    return version
+}
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.0"
+    defaultConfig {
+        applicationId "com.qianfan.minya"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "SERVER_URL", System.getenv("SERVER_URL") ?: "\"https://s01c-test.1000sails.com/dpos-web/s/\"")
+        buildConfigField("String", "UPDATE_URL", "\"https:\"")
+    }
+    buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+            manifestPlaceholders = [app_name: "千帆外勤-测试"]
+        }
+
+        release {
+            minifyEnabled true
+
+            //Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        branch {
+            initWith(buildTypes.release)
+
+            applicationIdSuffix ".branch"
+            manifestPlaceholders = [app_name: "千帆外勤-分支"]
+        }
+
+        scm {
+            initWith(buildTypes.debug)
+            applicationIdSuffix ".scm"
+            manifestPlaceholders = [app_name: "千帆外勤-分销"]
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+
+    applicationVariants.all { variant ->
+        def versionCode = gitVersionCode()
+        def versionName = variant.buildType.name + "." + versionCode
+        if (variant.buildType.name == "release") {
+            versionName = gitVersionName()
+        }
+        variant.mergedFlavor.versionCode = versionCode
+        variant.mergedFlavor.versionName = versionName
+
+
+        variant.outputs.each { output ->
+            def outputFile = output.outputFile
+            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                def fileName = "laya-${variant.buildType.name}-${versionName}-${versionCode}.apk"
+                output.outputFile = new File(outputFile.parent, fileName)
+            }
+        }
+    }
+
+
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    dependencies {
+        compile 'com.github.markzhai:databinding-rv-adapter:1.0.1'
+    }
+    compile 'com.android.support:appcompat-v7:25.0.1'
+    compile 'com.android.support:design:25.0.1'
+    testCompile 'junit:junit:4.12'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    compile 'com.android.support:multidex:1.0.0'
+    compile 'com.nineoldandroids:library:2.4.0'
+    compile 'com.tonicartos:superslim:0.4.13'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'pub.devrel:easypermissions:0.2.1'
+    compile 'org.greenrobot:eventbus:3.0.0'
+    compile files('libs/app-utils-1.0.jar')
+}

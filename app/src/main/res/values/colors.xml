@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="light_black">#333333</color>
+    <color name="white">#ffffff</color>
+    <color name="gray">#989898</color>
+    <color name="red">#fa364e</color>
+
+    <color name="line">#e5e5e5</color>
+    <color name="float_transparent">#00000000</color>
+
+    <!--dialog-->
+    <color name="success_stroke_color">#A5DC86</color>
+    <color name="sweet_dialog_bg_color">#FFFFFF</color>
+    <color name="trans_success_stroke_color">#33A5DC86</color>
+    <color name="theme_opaque">#bffa364e</color>
+</resources>
