@@ -1,7 +1,9 @@
 package com.leap.mini.listener;
 
 /**
- * Created by NeilSpears on 2016/11/3.
+ * 改变接口
+ * <p>
+ * </> Created by weiyaling on 2017/3/7.
  */
 
 public interface OnChangedListener<T> {

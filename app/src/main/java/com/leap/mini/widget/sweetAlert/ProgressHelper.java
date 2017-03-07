@@ -1,8 +1,7 @@
 package com.leap.mini.widget.sweetAlert;
 
 import android.content.Context;
-
-import com.qianfan123.minya.R;
+import com.leap.mini.R;
 
 
 public class ProgressHelper {

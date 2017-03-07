@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 
 import com.leap.mini.widget.cleartextfield.validator.FieldValidateError;
-import com.qianfan123.minya.R;
+import com.leap.mini.R;
 import com.leap.mini.widget.cleartextfield.validator.DefaultTextValidator;
 import com.leap.mini.widget.cleartextfield.validator.EmptyValidator;
 

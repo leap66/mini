@@ -1,8 +1,11 @@
 package com.leap.mini.listener;
 
 /**
- * Created by chailin on 2016/11/11.
+ * 确认接口
+ * <p>
+ * </> Created by weiyaling on 2017/3/7.
  */
+
 public interface OnConfirmListener<V, T> {
   void onConfirm(V view, T data);
 }

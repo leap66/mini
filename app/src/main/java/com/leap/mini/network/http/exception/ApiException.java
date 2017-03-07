@@ -3,7 +3,9 @@ package com.leap.mini.network.http.exception;
 import java.io.IOException;
 
 /**
- * Created by dzq on 2016/10/18.
+ * 网络异常实体类
+ * <p>
+ * </> Created by weiyaling on 2017/2/23.
  */
 
 public class ApiException extends IOException {

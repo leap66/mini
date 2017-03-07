@@ -6,7 +6,7 @@ import org.greenrobot.eventbus.ThreadMode;
 
 import com.leap.mini.network.http.AuthEvent;
 import com.leap.mini.util.ToastUtil;
-import com.qianfan123.minya.R;
+import com.leap.mini.R;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -104,7 +104,7 @@ public abstract class BaseActivity extends AppCompatActivity {
   @Subscribe(threadMode = ThreadMode.MAIN)
   public void handleTokenExpired(AuthEvent event) {
     if (event.type == AuthEvent.TOKEN_EXPIRED) {
-      ToastUtil.toastHint(this, R.string.newwork_request_err_401);
+      ToastUtil.toastHint(this, R.string.network_request_err_401);
       logout();
     }
   }

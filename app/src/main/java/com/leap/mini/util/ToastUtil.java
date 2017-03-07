@@ -1,7 +1,7 @@
 package com.leap.mini.util;
 
 import com.leap.mini.databinding.ItemToastBinding;
-import com.qianfan123.minya.R;
+import com.leap.mini.R;
 
 import android.content.Context;
 import android.databinding.DataBindingUtil;

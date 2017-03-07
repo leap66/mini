@@ -1,7 +1,9 @@
 package com.leap.mini.listener;
 
 /**
- * Created by fuhuaxuan on 2016/11/28.
+ * 取消接口
+ * <p>
+ * </> Created by weiyaling on 2017/3/7.
  */
 
 public interface OnCancelListener<V, T> {

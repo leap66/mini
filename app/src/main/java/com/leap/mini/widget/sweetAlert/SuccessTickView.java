@@ -8,8 +8,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
-
-import com.qianfan123.minya.R;
+import com.leap.mini.R;
 
 public class SuccessTickView extends View {
     private float mDensity = -1;

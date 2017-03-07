@@ -26,7 +26,7 @@ import com.leap.mini.widget.pullrefresh.base.layout.BaseHeaderView;
 import com.leap.mini.widget.pullrefresh.base.support.impl.Loadable;
 import com.leap.mini.widget.pullrefresh.base.support.impl.Refreshable;
 import com.leap.mini.widget.pullrefresh.base.support.utils.CanPullUtil;
-import com.qianfan123.minya.R;
+import com.leap.mini.R;
 import com.leap.mini.widget.pullrefresh.base.layout.BaseFooterView;
 import com.leap.mini.widget.pullrefresh.base.layout.PullRefreshLayout;
 

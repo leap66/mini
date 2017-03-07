@@ -1,7 +1,7 @@
 package com.leap.mini.util;
 
 import com.leap.mini.widget.sweetAlert.SweetAlertDialog;
-import com.qianfan123.minya.R;
+import com.leap.mini.R;
 
 import android.content.Context;
 import android.support.v4.content.ContextCompat;

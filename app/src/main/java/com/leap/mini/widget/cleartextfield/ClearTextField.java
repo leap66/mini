@@ -8,8 +8,7 @@ import android.view.Gravity;
 import android.view.inputmethod.EditorInfo;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import com.qianfan123.minya.R;
+import com.leap.mini.R;
 import com.leap.mini.widget.cleartextfield.validator.FieldValidateError;
 
 /**

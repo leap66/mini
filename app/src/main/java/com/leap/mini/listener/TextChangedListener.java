@@ -4,7 +4,9 @@ import android.text.Editable;
 import android.text.TextWatcher;
 
 /**
- * Created by NeilSpears on 2016/11/14.
+ * EditText 字段改变接口
+ * <p>
+ * </> Created by weiyaling on 2017/3/7.
  */
 
 public abstract class TextChangedListener implements TextWatcher {

@@ -1,8 +1,8 @@
 package com.leap.mini.presentation.main;
 
+import com.leap.mini.R;
+import com.leap.mini.databinding.ActivityMainBinding;
 import com.leap.mini.presentation.base.BaseActivity;
-import com.qianfan123.minya.R;
-import com.qianfan123.minya.databinding.ActivityMainBinding;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;

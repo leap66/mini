@@ -1,6 +1,6 @@
 package com.leap.mini.network.http.update;
 
-import com.qianfan123.minya.R;
+import com.leap.mini.R;
 import com.leap.mini.network.model.UpdateModel;
 
 import android.app.Dialog;

@@ -1,7 +1,9 @@
 package com.leap.mini.listener;
 
 /**
- * Created by weiyaling on 2017/1/11.
+ * dataBinding 接口
+ * <p>
+ * </> Created by weiyaling on 2017/3/7.
  */
 
 public interface OnViewBindingListener<ViewDataBinding> {

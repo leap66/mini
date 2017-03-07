@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import com.qianfan123.minya.R;
+import com.leap.mini.R;
 import com.leap.mini.network.http.HttpSubscriber;
 import com.leap.mini.network.http.UpdateClient;
 import com.leap.mini.network.http.bean.Response;

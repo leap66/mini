@@ -1,7 +1,7 @@
 package com.leap.mini.util;
 
 import com.bumptech.glide.Glide;
-import com.qianfan123.minya.R;
+import com.leap.mini.R;
 
 import android.databinding.BindingAdapter;
 import android.support.v7.widget.RecyclerView;

@@ -3,7 +3,9 @@ package com.leap.mini.listener;
 import android.support.v7.widget.RecyclerView;
 
 /**
- * Created by NeilSpears on 2016/11/10.
+ * Adapter 改变接口
+ * <p>
+ * </> Created by weiyaling on 2017/3/7.
  */
 
 public class OnRecycleAdapterChangedListener extends RecyclerView.AdapterDataObserver {

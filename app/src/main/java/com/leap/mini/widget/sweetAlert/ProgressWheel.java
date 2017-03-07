@@ -16,8 +16,7 @@ import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.View;
-
-import com.qianfan123.minya.R;
+import com.leap.mini.R;
 
 /**
  * A Material style update_progress wheel, compatible up to 2.2.

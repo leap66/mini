@@ -9,7 +9,7 @@ import com.leap.mini.network.http.exception.ApiException;
 import com.leap.mini.network.http.exception.TokenExpiredException;
 import com.leap.mini.util.IsEmpty;
 import com.leap.mini.util.NetworkUtil;
-import com.qianfan123.minya.R;
+import com.leap.mini.R;
 
 import android.content.Context;
 import android.text.TextUtils;
@@ -22,10 +22,6 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
-
-/**
- * Created by wangcong on 2017/2/28.
- */
 
 public class ApiClient {
 
@@ -70,21 +66,21 @@ public class ApiClient {
     @Override
     public Response intercept(Chain chain) throws IOException {
       if (!NetworkUtil.isConnected(context)) {
-        throw new ApiException(0, context.getString(R.string.newwork_err));
+        throw new ApiException(0, context.getString(R.string.network_err));
       }
       Request request = chain.request();
       Response response = chain.proceed(request);
       ApiException e = null;
       if (401 == response.code()) {
-        throw new TokenExpiredException(401, context.getString(R.string.newwork_request_err_401));
+        throw new TokenExpiredException(401, context.getString(R.string.network_request_err_401));
       } else if (403 == response.code()) {
-        e = new ApiException(403, context.getString(R.string.newwork_request_err_403));
+        e = new ApiException(403, context.getString(R.string.network_request_err_403));
       } else if (503 == response.code()) {
-        e = new ApiException(503, context.getString(R.string.newwork_request_err_503));
+        e = new ApiException(503, context.getString(R.string.network_request_err_503));
       } else if (500 == response.code()) {
-        e = new ApiException(500, context.getString(R.string.newwork_request_err_500));
+        e = new ApiException(500, context.getString(R.string.network_request_err_500));
       } else if (404 == response.code()) {
-        e = new ApiException(404, context.getString(R.string.newwork_request_err_404));
+        e = new ApiException(404, context.getString(R.string.network_request_err_404));
       }
       if (e != null) {
         throw e;

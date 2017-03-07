@@ -1,6 +1,6 @@
 package com.leap.mini.widget.cleartextfield;
 
-import com.qianfan123.minya.R;
+import com.leap.mini.R;
 
 /**
  * Created by wangcong on 2017/1/11.

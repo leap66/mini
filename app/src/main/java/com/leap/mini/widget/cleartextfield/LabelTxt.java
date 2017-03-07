@@ -5,8 +5,7 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-import com.qianfan123.minya.R;
+import com.leap.mini.R;
 
 /**
  * Created by wangcong on 2017/1/11.
