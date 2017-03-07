@@ -1,7 +1,7 @@
 package com.qianfan123.minya.network.interactors.update.usecase;
 
 import com.qianfan123.minya.network.http.BaseUseCase;
-import com.qianfan123.minya.network.http.bean.ResponseBean;
+import com.qianfan123.minya.network.http.bean.Response;
 import com.qianfan123.minya.network.interactors.update.UpdateServiceApi;
 import com.qianfan123.minya.network.model.UpdateModel;
 
@@ -43,7 +43,7 @@ public class CheckVersionCase extends BaseUseCase<UpdateServiceApi> {
   }
 
   @Override
-  protected Observable<ResponseBean<UpdateModel>> buildCase() {
+  protected Observable<Response<UpdateModel>> buildCase() {
     return createConnection().checkVersion(appToken, appKey, pid, appId, versionCode);
   }
 }

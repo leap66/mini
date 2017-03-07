@@ -1,6 +1,6 @@
 package com.qianfan123.minya.network.interactors.update;
 
-import com.qianfan123.minya.network.http.bean.ResponseBean;
+import com.qianfan123.minya.network.http.bean.Response;
 import com.qianfan123.minya.network.model.UpdateModel;
 
 import retrofit2.http.GET;
@@ -27,9 +27,9 @@ public interface UpdateServiceApi {
    * @return
    */
   @GET("app/version/check")
-  Observable<ResponseBean<UpdateModel>> checkVersion(@Query("appToken") String appToken,
-                                                     @Query("appKey") String appKey, @Query("pid") String pid, @Query("appId") String appId,
-                                                     @Query("versionCode") String versionCode);
+  Observable<Response<UpdateModel>> checkVersion(@Query("appToken") String appToken,
+                                                 @Query("appKey") String appKey, @Query("pid") String pid, @Query("appId") String appId,
+                                                 @Query("versionCode") String versionCode);
 
   /**
    * 版本安装统计
@@ -44,7 +44,7 @@ public interface UpdateServiceApi {
    * @return
    */
   @POST("app/version/install")
-  Observable<ResponseBean<String>> installStatistics(@Query("appToken") String appToken,
-      @Query("appKey") String appKey, @Query("pid") String pid, @Query("appId") String appId,
-      @Query("versionCode") String versionCode);
+  Observable<Response<String>> installStatistics(@Query("appToken") String appToken,
+                                                 @Query("appKey") String appKey, @Query("pid") String pid, @Query("appId") String appId,
+                                                 @Query("versionCode") String versionCode);
 }

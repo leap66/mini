@@ -9,7 +9,7 @@ import java.security.NoSuchAlgorithmException;
 import com.qianfan123.minya.R;
 import com.qianfan123.minya.network.http.HttpSubscriber;
 import com.qianfan123.minya.network.http.UpdateClient;
-import com.qianfan123.minya.network.http.bean.ResponseBean;
+import com.qianfan123.minya.network.http.bean.Response;
 import com.qianfan123.minya.network.interactors.update.usecase.CheckVersionCase;
 import com.qianfan123.minya.network.model.UpdateModel;
 import com.qianfan123.minya.util.IsEmpty;
@@ -71,7 +71,7 @@ public class UpdateMgr {
     new CheckVersionCase(TokenGenerator.generate(appId, time), time, "1", appId, versionCode)
         .execute(new HttpSubscriber<UpdateModel>() {
           @Override
-          public void onFailure(String errorMsg, ResponseBean<UpdateModel> response) {
+          public void onFailure(String errorMsg, Response<UpdateModel> response) {
             if (listener != null) {
               if (IsEmpty.string(errorMsg)) {
                 listener.onCancel(IUpdateListener.UPDATE_CODE_FAIL);
@@ -82,7 +82,7 @@ public class UpdateMgr {
           }
 
           @Override
-          public void onSuccess(UpdateModel data, ResponseBean response) {
+          public void onSuccess(UpdateModel data, Response response) {
             model = data;
             // 已是最新版本
             if (!model.upgradable) {

@@ -1,7 +1,7 @@
 package com.qianfan123.minya.network.interactors.update.usecase;
 
 import com.qianfan123.minya.network.http.BaseUseCase;
-import com.qianfan123.minya.network.http.bean.ResponseBean;
+import com.qianfan123.minya.network.http.bean.Response;
 import com.qianfan123.minya.network.interactors.update.UpdateServiceApi;
 
 import rx.Observable;
@@ -38,7 +38,7 @@ public class InstallStatisticsCase extends BaseUseCase<UpdateServiceApi> {
   }
 
   @Override
-  protected Observable<ResponseBean<String>> buildCase() {
+  protected Observable<Response<String>> buildCase() {
     return createUpdateConnection().installStatistics(appToken, appKey, pid, appId, versionCode);
   }
 }

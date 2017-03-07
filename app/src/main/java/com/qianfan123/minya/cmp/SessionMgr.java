@@ -8,8 +8,6 @@ import android.content.Context;
 public class SessionMgr {
   // key
   private static String KEY_SESSION = "session";
-  private static String KEY_SHOP_DONAIN = "shopDomain";
-  private static String KEY_LAST_MODIFIED = "lastModified";
   private static int UPDATE_PERIOD = 1;// 更新周期
 
   private static String lastModified;// 上次更新时间(时间撮)

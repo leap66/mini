@@ -7,7 +7,7 @@ import java.util.Map;
  * Created by dzq on 2016/10/18.
  */
 
-public class ResponseBean<T> {
+public class Response<T> {
   private boolean success;
   private Map<String, String> fields;
   private List<String> message;

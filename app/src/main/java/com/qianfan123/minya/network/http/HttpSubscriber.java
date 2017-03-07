@@ -6,7 +6,7 @@ import java.net.SocketTimeoutException;
 import org.greenrobot.eventbus.EventBus;
 import org.json.JSONException;
 
-import com.qianfan123.minya.network.http.bean.ResponseBean;
+import com.qianfan123.minya.network.http.bean.Response;
 import com.qianfan123.minya.network.http.exception.ApiException;
 import com.qianfan123.minya.network.http.exception.TokenExpiredException;
 import com.qianfan123.minya.util.DialogUtil;
@@ -20,7 +20,7 @@ import android.content.Context;
  * </>
  */
 
-public abstract class HttpSubscriber<T> extends rx.Subscriber<ResponseBean<T>> {
+public abstract class HttpSubscriber<T> extends rx.Subscriber<Response<T>> {
 
   private Context context;
   private SweetAlertDialog dialog;
@@ -52,7 +52,7 @@ public abstract class HttpSubscriber<T> extends rx.Subscriber<ResponseBean<T>> {
   }
 
   @Override
-  public void onNext(ResponseBean<T> t) {
+  public void onNext(Response<T> t) {
     if (dialog != null && context != null)
       dialog.dismiss();
     if (t == null) {
@@ -71,9 +71,9 @@ public abstract class HttpSubscriber<T> extends rx.Subscriber<ResponseBean<T>> {
 
   }
 
-  public abstract void onFailure(String errorMsg, ResponseBean<T> response);
+  public abstract void onFailure(String errorMsg, Response<T> response);
 
-  public abstract void onSuccess(T data, ResponseBean<T> response);
+  public abstract void onSuccess(T data, Response<T> response);
 
   private String parseException(Throwable throwable) {
     String errorMessage;
