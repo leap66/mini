@@ -4,9 +4,9 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
-import com.leap.mini.network.event.AuthEvent;
-import com.leap.mini.util.ToastUtil;
 import com.leap.mini.R;
+import com.leap.mini.interactor.network.event.AuthEvent;
+import com.leap.mini.util.ToastUtil;
 
 import android.content.Context;
 import android.os.Bundle;

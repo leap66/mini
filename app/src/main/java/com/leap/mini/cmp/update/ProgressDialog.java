@@ -1,7 +1,7 @@
 package com.leap.mini.cmp.update;
 
 import com.leap.mini.R;
-import com.leap.mini.model.update.UpdateModel;
+import com.leap.mini.interactor.model.update.UpdateModel;
 
 import android.app.Dialog;
 import android.content.Context;

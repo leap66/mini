@@ -20,47 +20,47 @@ import android.webkit.WebView;
  */
 @SuppressLint("SetJavaScriptEnabled")
 public class AgreementActivity extends BaseActivity {
-    private ActivityAuthAgreementBinding binding;
+  private ActivityAuthAgreementBinding binding;
 
-    /**
-     * 初始化控件
-     */
-    protected void initComponent() {
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_auth_agreement);
-        binding.setPresenter(new Presenter());
-    }
+  /**
+   * 初始化控件
+   */
+  protected void initComponent() {
+    binding = DataBindingUtil.setContentView(this, R.layout.activity_auth_agreement);
+    binding.setPresenter(new Presenter());
+  }
 
-    /**
-     * 加载数据
-     */
-    protected void loadData(Bundle savedInstanceState) {
-        WebSettings settings = binding.web.getSettings();
-        settings.setJavaScriptEnabled(true);
-        binding.web.loadUrl(BuildConfig.AGREEMENT_URL);
-        binding.web.setWebChromeClient(new WebChromeClient() {
-            @Override
-            public void onProgressChanged(WebView view, int newProgress) {
-                super.onProgressChanged(view, newProgress);
-                if (newProgress == binding.pb.getMax()) {
-                    binding.pb.setVisibility(View.GONE);
-                } else {
-                    binding.pb.setProgress(newProgress);
-                }
-            }
-        });
-    }
-
-    /**
-     * 主界面Presenter
-     */
-    public class Presenter {
-
-        /**
-         * 返回注册
-         */
-        public void onBack() {
-            finish();
+  /**
+   * 加载数据
+   */
+  protected void loadData(Bundle savedInstanceState) {
+    WebSettings settings = binding.web.getSettings();
+    settings.setJavaScriptEnabled(true);
+    binding.web.loadUrl(BuildConfig.AGREEMENT_URL);
+    binding.web.setWebChromeClient(new WebChromeClient() {
+      @Override
+      public void onProgressChanged(WebView view, int newProgress) {
+        super.onProgressChanged(view, newProgress);
+        if (newProgress == binding.pb.getMax()) {
+          binding.pb.setVisibility(View.GONE);
+        } else {
+          binding.pb.setProgress(newProgress);
         }
+      }
+    });
+  }
+
+  /**
+   * 主界面Presenter
+   */
+  public class Presenter {
+
+    /**
+     * 返回注册
+     */
+    public void onBack() {
+      finish();
     }
+  }
 
 }

@@ -1,7 +1,7 @@
 package com.leap.mini.cmp;
 
-import com.leap.mini.model.entity.BSessionShop;
-import com.leap.mini.model.entity.BSessionUser;
+import com.leap.mini.interactor.model.entity.BSessionShop;
+import com.leap.mini.interactor.model.entity.BSessionUser;
 import com.leap.mini.util.GsonUtil;
 import com.leap.mini.util.IsEmpty;
 

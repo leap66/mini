@@ -4,7 +4,7 @@ import com.blankj.utilcode.utils.Utils;
 import com.leap.mini.cmp.SessionMgr;
 import com.leap.mini.cmp.StorageMgr;
 import com.leap.mini.cmp.TokenMgr;
-import com.leap.mini.network.ApiClient;
+import com.leap.mini.interactor.network.ApiClient;
 
 import android.support.multidex.MultiDexApplication;
 

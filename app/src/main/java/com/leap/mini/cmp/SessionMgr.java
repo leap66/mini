@@ -4,15 +4,15 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import com.leap.mini.interactor.shop.usecase.GetSessionCase;
-import com.leap.mini.model.entity.BApplicationAbout;
-import com.leap.mini.model.entity.BDposSession;
-import com.leap.mini.model.entity.BSessionPosCfg;
-import com.leap.mini.model.entity.BSessionShop;
-import com.leap.mini.model.entity.BSessionUser;
-import com.leap.mini.model.user.BUser;
-import com.leap.mini.network.subscriber.PureSubscriber;
-import com.leap.mini.network.subscriber.Response;
+import com.leap.mini.interactor.api_interface.shop.usecase.GetSessionCase;
+import com.leap.mini.interactor.model.entity.BApplicationAbout;
+import com.leap.mini.interactor.model.entity.BDposSession;
+import com.leap.mini.interactor.model.entity.BSessionPosCfg;
+import com.leap.mini.interactor.model.entity.BSessionShop;
+import com.leap.mini.interactor.model.entity.BSessionUser;
+import com.leap.mini.interactor.model.user.BUser;
+import com.leap.mini.interactor.network.subscriber.PureSubscriber;
+import com.leap.mini.interactor.network.subscriber.Response;
 import com.leap.mini.util.DeviceInfoUtil;
 import com.leap.mini.util.IsEmpty;
 

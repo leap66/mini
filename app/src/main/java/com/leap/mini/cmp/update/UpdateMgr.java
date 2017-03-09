@@ -6,11 +6,11 @@ import java.io.IOException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import com.leap.mini.interactor.update.usecase.CheckVersionCase;
-import com.leap.mini.model.update.UpdateModel;
-import com.leap.mini.network.UpdateClient;
-import com.leap.mini.network.subscriber.PureSubscriber;
-import com.leap.mini.network.subscriber.Response;
+import com.leap.mini.interactor.api_interface.update.usecase.CheckVersionCase;
+import com.leap.mini.interactor.model.update.UpdateModel;
+import com.leap.mini.interactor.network.UpdateClient;
+import com.leap.mini.interactor.network.subscriber.PureSubscriber;
+import com.leap.mini.interactor.network.subscriber.Response;
 import com.leap.mini.util.IsEmpty;
 import com.qianfan123.app.TokenGenerator;
 

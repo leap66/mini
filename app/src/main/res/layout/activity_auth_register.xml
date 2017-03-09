@@ -6,7 +6,7 @@
 
         <variable
             name="item"
-            type="com.leap.mini.interactor.auth.usecase.RegisterRequest" />
+            type="com.leap.mini.interactor.api_interface.auth.usecase.RegisterRequest" />
 
         <variable
             name="presenter"
