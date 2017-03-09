@@ -3,7 +3,8 @@ package com.leap.mini.widget.cleartextfield;
 import com.leap.mini.R;
 
 /**
- * Created by wangcong on 2017/1/11.
+ * <p>
+ * </> Created by weiyaling on 2017/3/7.
  */
 
 enum DefValue {

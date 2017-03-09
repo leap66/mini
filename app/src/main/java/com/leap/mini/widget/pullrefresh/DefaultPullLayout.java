@@ -1,14 +1,14 @@
 package com.leap.mini.widget.pullrefresh;
 
+import com.leap.mini.widget.pullrefresh.base.support.impl.Pullable;
+
 import android.content.Context;
 import android.support.v4.widget.NestedScrollView;
 import android.util.AttributeSet;
 
-import com.leap.mini.widget.pullrefresh.base.support.impl.Pullable;
-
-
 /**
- * Created by NeilSpears on 2016/10/19.
+ * <p>
+ * </> Created by weiyaling on 2017/3/7.
  */
 
 public class DefaultPullLayout extends NestedScrollView implements Pullable {

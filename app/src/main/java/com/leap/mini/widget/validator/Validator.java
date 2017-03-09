@@ -12,7 +12,8 @@ import com.leap.mini.widget.validator.rules.Rule;
 import android.widget.TextView;
 
 /**
- * Created by neil on 2017/3/6.
+ * <p>
+ * </> Created by weiyaling on 2017/3/7.
  */
 
 public class Validator {

@@ -1,5 +1,10 @@
 package com.leap.mini.widget.cleartextfield;
 
+import com.leap.mini.R;
+import com.leap.mini.widget.cleartextfield.validator.DefaultTextValidator;
+import com.leap.mini.widget.cleartextfield.validator.EmptyValidator;
+import com.leap.mini.widget.cleartextfield.validator.FieldValidateError;
+
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Rect;
@@ -11,13 +16,9 @@ import android.view.MotionEvent;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
-import com.leap.mini.widget.cleartextfield.validator.FieldValidateError;
-import com.leap.mini.R;
-import com.leap.mini.widget.cleartextfield.validator.DefaultTextValidator;
-import com.leap.mini.widget.cleartextfield.validator.EmptyValidator;
-
 /**
- * Created by wangcong on 2017/1/11.
+ * <p>
+ * </> Created by weiyaling on 2017/3/7.
  */
 
 public class ClearEditText extends EditText {

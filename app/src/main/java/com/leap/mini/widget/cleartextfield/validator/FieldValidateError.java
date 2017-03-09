@@ -3,7 +3,8 @@ package com.leap.mini.widget.cleartextfield.validator;
 import android.widget.EditText;
 
 /**
- * Created by dzq on 2016/10/24.
+ * <p>
+ * </> Created by weiyaling on 2017/3/7.
  */
 
 public class FieldValidateError {

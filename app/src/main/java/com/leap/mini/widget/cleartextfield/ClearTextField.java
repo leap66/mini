@@ -1,5 +1,8 @@
 package com.leap.mini.widget.cleartextfield;
 
+import com.leap.mini.R;
+import com.leap.mini.widget.cleartextfield.validator.FieldValidateError;
+
 import android.content.Context;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -8,11 +11,10 @@ import android.view.Gravity;
 import android.view.inputmethod.EditorInfo;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.leap.mini.R;
-import com.leap.mini.widget.cleartextfield.validator.FieldValidateError;
 
 /**
- * Created by wangcong on 2017/1/11.
+ * <p>
+ * </> Created by weiyaling on 2017/3/7.
  */
 
 public class ClearTextField extends LinearLayout {

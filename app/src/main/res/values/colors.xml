@@ -9,7 +9,6 @@
     <color name="gray">#989898</color>
     <color name="red">#fa364e</color>
 
-    <color name="line">#e5e5e5</color>
     <color name="float_transparent">#00000000</color>
 
     <!--dialog-->
@@ -17,4 +16,34 @@
     <color name="sweet_dialog_bg_color">#FFFFFF</color>
     <color name="trans_success_stroke_color">#33A5DC86</color>
     <color name="theme_opaque">#bffa364e</color>
+
+    <color name="theme">#fa364e</color>
+    <color name="theme_deep">#eb253d</color>
+    <color name="home_title_red">#d9fa364d</color>
+    <color name="pbt_report_btn_red">#fc3b58</color>
+    <color name="fill_pbt_report_red">#33fa364d</color>
+    <color name="fill_pbt_report_blue">#803672e3</color>
+    <color name="background">#f5f7f9</color>
+    <color name="normal_background">#f5f7f9</color>
+    <color name="bottom_background">#db283049</color>
+    <color name="bg_transparency">#a6161b23</color>
+    <color name="half_transparency">#7fffffff</color>
+    <color name="line">#e5e5e5</color>
+    <color name="bg_select">#eeeeee</color>
+    <color name="line_deep">#cccccc</color>
+    <color name="text_white">#ffffff</color>
+    <color name="text_deep_black">#000000</color>
+    <color name="text_light_yellow">#ff6e17</color>
+    <color name="text_black">#333333</color>
+    <color name="text_green">#52be59</color>
+    <color name="text_warm">#888888</color>
+    <color name="text_light_warm">#999999</color>
+    <color name="text_warmGray">#808080</color><!--add color by lichaofan-->
+    <color name="text_grey">#b0b0b0</color>
+    <color name="text_deep_grey">#666666</color>
+    <color name="text_shallow_grey">#5f646e</color>
+    <color name="text_steel">#7c7c96</color>
+    <color name="link">#495ea3</color>
+    <color name="text_yellow">#f57b12</color>
+    <color name="background_overflow">#33333333</color>
 </resources>

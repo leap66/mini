@@ -4,7 +4,7 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
-import com.leap.mini.network.http.AuthEvent;
+import com.leap.mini.network.event.AuthEvent;
 import com.leap.mini.util.ToastUtil;
 import com.leap.mini.R;
 

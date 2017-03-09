@@ -4,7 +4,8 @@ import android.text.TextUtils;
 import android.widget.EditText;
 
 /**
- * Created by NeilSpears on 2016/11/5.
+ * <p>
+ * </> Created by weiyaling on 2017/3/7.
  */
 
 public class EmptyValidator implements FieldValidator<EditText> {

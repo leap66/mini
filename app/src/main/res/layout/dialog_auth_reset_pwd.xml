@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="presenter"
+            type="com.leap.mini.presentation.auth.ResetPwdDialog.Presenter" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingBottom="30dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:gravity="center">
+
+            <!--style="@null"-->
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="@string/register_forget_password_title"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/large_text_size" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerHorizontal="true"
+                android:onClick="@{()->presenter.onCancel()}"
+                android:padding="15dp"
+                android:text="@string/cancel"
+                android:textColor="@color/text_warmGray"
+                android:textSize="@dimen/normal_text_size" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/textView2"
+                android:layout_alignBottom="@+id/textView2"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:onClick="@{()->presenter.onConfirm()}"
+                android:padding="15dp"
+                android:text="@string/confirm"
+                android:textColor="@color/theme"
+                android:textSize="@dimen/normal_text_size" /><!--style="@null"-->
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/line_deep" />
+
+        <LinearLayout
+            android:id="@+id/form_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            app:divider="@color/line"
+            app:showDividers="middle">
+
+            <com.leap.mini.widget.cleartextfield.ClearTextField
+                android:id="@+id/phone_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:paddingBottom="12dp"
+                android:paddingTop="12dp"
+                app:edit_errMsg="@string/register_phone_empty"
+                app:edit_hint="@string/register_phone_hint"
+                app:edit_inputType="phone"
+                app:edit_maxLength="11"
+                app:edit_padding_left="16dp"
+                app:edit_text_size="@dimen/normal_text_size"
+                app:label_layout_width="90dp"
+                app:label_text="@string/register_phone"
+                app:label_text_color="@color/text_black"
+                app:label_text_size="@dimen/normal_text_size" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line" />
+
+
+            <com.leap.mini.widget.cleartextfield.ClearTextField
+                android:id="@+id/password_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:paddingBottom="12dp"
+                android:paddingTop="12dp"
+                app:edit_errMsg="@string/register_password_empty"
+                app:edit_hint="@string/login_new_password_hint"
+                app:edit_inputType="password"
+                app:edit_maxLength="16"
+                app:edit_padding_left="16dp"
+                app:edit_text_size="@dimen/normal_text_size"
+                app:label_layout_width="90dp"
+                app:label_text="@string/register_password"
+                app:label_text_color="@color/text_black"
+                app:label_text_size="@dimen/normal_text_size" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line" />
+
+            <com.leap.mini.widget.cleartextfield.ClearTextField
+                android:id="@+id/repeat_password_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:paddingBottom="12dp"
+                android:paddingTop="12dp"
+                app:edit_errMsg="@string/register_repeat_phone_empty"
+                app:edit_hint="@string/register_repeat_password_hint"
+                app:edit_inputType="password"
+                app:edit_maxLength="16"
+                app:edit_padding_left="16dp"
+                app:edit_text_size="@dimen/normal_text_size"
+                app:label_layout_width="90dp"
+                app:label_text="@string/register_password_confirm"
+                app:label_text_color="@color/text_black"
+                app:label_text_size="@dimen/normal_text_size" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.leap.mini.widget.cleartextfield.ClearTextField
+                    android:id="@+id/code_et"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:paddingBottom="12dp"
+                    android:paddingTop="12dp"
+                    app:edit_errMsg="@string/register_code_empty"
+                    app:edit_hint="@string/register_auth_code_hint"
+                    app:edit_inputType="number"
+                    app:edit_maxLength="6"
+                    app:edit_padding_left="16dp"
+                    app:edit_text_size="@dimen/normal_text_size"
+                    app:label_layout_width="90dp"
+                    app:label_text="@string/register_auth_code"
+                    app:label_text_color="@color/text_black"
+                    app:label_text_size="@dimen/normal_text_size" />
+
+                <com.leap.mini.widget.CountTimeTextView
+                    android:id="@+id/send_code_ct"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:enabled="false"
+                    android:onClick="@{()->presenter.onSmsSend()}"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:gravity="center"
+                    android:text="@string/register_send_code"
+                    android:textColor="@color/theme"
+                    android:textSize="@dimen/small_text_size" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

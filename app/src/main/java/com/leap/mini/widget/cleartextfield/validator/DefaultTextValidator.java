@@ -1,12 +1,13 @@
 package com.leap.mini.widget.cleartextfield.validator;
 
-import android.widget.EditText;
-
 import java.util.ArrayList;
 import java.util.List;
 
+import android.widget.EditText;
+
 /**
- * Created by NeilSpears on 2016/11/5.
+ * <p>
+ * </> Created by weiyaling on 2017/3/7.
  */
 
 public class DefaultTextValidator {

@@ -1,14 +1,16 @@
 package com.leap.mini.widget.cleartextfield;
 
+import com.leap.mini.R;
+
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import com.leap.mini.R;
 
 /**
- * Created by wangcong on 2017/1/11.
+ * <p>
+ * </> Created by weiyaling on 2017/3/7.
  */
 
 public class LabelTxt extends TextView {

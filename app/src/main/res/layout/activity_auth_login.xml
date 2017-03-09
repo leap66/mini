@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="presenter"
+            type="com.leap.mini.presentation.auth.LoginActivity.Presenter" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/text_white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/app_name"
+            android:textColor="@color/red"
+            android:textSize="@dimen/largest_text_size" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@color/background"
+            android:orientation="vertical">
+
+            <com.leap.mini.widget.cleartextfield.ClearTextField
+                android:id="@+id/phone_et"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:maxLines="1"
+                app:edit_errMsg="@string/register_phone_empty"
+                app:edit_hint="@string/register_phone"
+                app:edit_inputType="phone"
+                app:edit_maxLength="11"
+                app:edit_text_size="@dimen/large_text_size" />
+
+            <com.leap.mini.widget.cleartextfield.ClearTextField
+                android:id="@+id/password_et"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                app:edit_errMsg="@string/register_password_empty"
+                app:edit_hint="@string/login_password_hint"
+                app:edit_inputType="password"
+                app:edit_maxLength="16"
+                app:edit_text_size="@dimen/large_text_size" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@color/line" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/login_btn"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@color/theme"
+            android:onClick="@{()->presenter.onLogin()}"
+            android:text="@string/login"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/large_text_size" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/login_btm_bg_adr_720"
+            android:gravity="bottom"
+            android:paddingBottom="16dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="@{()->presenter.onForgetPassword()}"
+                android:text="@string/login_forget_password"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/normal_text_size" />
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="20dp"
+                android:background="#33ffffff" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="end"
+                android:onClick="@{()->presenter.onRegister()}"
+                android:text="@string/register_new_user_register"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/normal_text_size" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

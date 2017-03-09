@@ -3,8 +3,10 @@ package com.leap.mini.widget.cleartextfield.validator;
 import android.widget.EditText;
 
 /**
- * Created by NeilSpears on 2016/11/5.
+ * <p>
+ * </> Created by weiyaling on 2017/3/7.
  */
+
 public class FloatRangeValidator implements FieldValidator<EditText> {
   private float max;
   private float min;

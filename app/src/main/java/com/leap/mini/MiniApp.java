@@ -1,7 +1,10 @@
 package com.leap.mini;
 
+import com.blankj.utilcode.utils.Utils;
+import com.leap.mini.cmp.SessionMgr;
 import com.leap.mini.cmp.StorageMgr;
-import com.leap.mini.network.http.ApiClient;
+import com.leap.mini.cmp.TokenMgr;
+import com.leap.mini.network.ApiClient;
 
 import android.support.multidex.MultiDexApplication;
 
@@ -24,5 +27,8 @@ public class MiniApp extends MultiDexApplication {
     super.onCreate();
     ApiClient.init(this, BuildConfig.SERVER_URL);
     StorageMgr.init(this);
+    SessionMgr.init(this);
+    TokenMgr.init();
+    Utils.init(this);
   }
 }

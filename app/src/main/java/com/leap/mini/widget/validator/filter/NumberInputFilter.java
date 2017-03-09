@@ -4,7 +4,8 @@ import android.text.InputFilter;
 import android.text.Spanned;
 
 /**
- * Created by NeilSpears on 2016/11/10.
+ * <p>
+ * </> Created by weiyaling on 2017/3/7.
  */
 
 public class NumberInputFilter implements InputFilter {

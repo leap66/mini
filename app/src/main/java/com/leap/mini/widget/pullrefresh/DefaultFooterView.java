@@ -1,13 +1,14 @@
 package com.leap.mini.widget.pullrefresh;
 
+import com.leap.mini.widget.pullrefresh.base.layout.BaseFooterView;
+import com.leap.mini.widget.pullrefresh.base.support.type.LayoutType;
+
 import android.content.Context;
 import android.util.AttributeSet;
 
-import com.leap.mini.widget.pullrefresh.base.support.type.LayoutType;
-import com.leap.mini.widget.pullrefresh.base.layout.BaseFooterView;
-
 /**
- * Created by NeilSpears on 2016/10/19.
+ * <p>
+ * </> Created by weiyaling on 2017/3/7.
  */
 
 public class DefaultFooterView extends BaseFooterView {

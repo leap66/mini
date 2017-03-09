@@ -1,12 +1,13 @@
 package com.leap.mini.widget.cleartextfield.validator;
 
-import android.widget.EditText;
-
 import java.text.MessageFormat;
 import java.util.regex.Pattern;
 
+import android.widget.EditText;
+
 /**
- * Created by NeilSpears on 2016/11/5.
+ * <p>
+ * </> Created by weiyaling on 2017/3/7.
  */
 
 public class PatternValidator implements FieldValidator<EditText> {
@@ -18,7 +19,7 @@ public class PatternValidator implements FieldValidator<EditText> {
     if (message != null) {
       this.message = message;
     } else {
-      this.message =format(message, regex);
+      this.message = format(message, regex);
     }
   }
 

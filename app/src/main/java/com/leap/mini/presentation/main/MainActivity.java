@@ -19,10 +19,17 @@ public class MainActivity extends BaseActivity {
   @Override
   protected void initComponent() {
     binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+    binding.setPresenter(new Presenter());
   }
 
   @Override
   protected void loadData(Bundle savedInstanceState) {
 
+  }
+
+  public class Presenter {
+    public void onBack() {
+      finish();
+    }
   }
 }

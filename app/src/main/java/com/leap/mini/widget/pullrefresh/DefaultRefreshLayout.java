@@ -155,10 +155,6 @@ public class DefaultRefreshLayout extends PullRefreshLayout {
 
   /**
    * 确保头尾最后画
-   * 
-   * @param childCount
-   * @param i
-   * @return
    */
   @Override
   protected int getChildDrawingOrder(int childCount, int i) {
@@ -211,12 +207,6 @@ public class DefaultRefreshLayout extends PullRefreshLayout {
 
   /**
    * 增加控制：没有设置头部或尾部时，不能滚动
-   * 
-   * @param target
-   * @param dxConsumed
-   * @param dyConsumed
-   * @param dxUnconsumed
-   * @param dyUnconsumed
    */
   @Override
   public void onNestedScroll(View target, int dxConsumed, int dyConsumed, int dxUnconsumed,
