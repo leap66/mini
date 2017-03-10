@@ -21,9 +21,7 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewConfiguration;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
@@ -37,7 +35,7 @@ import android.view.inputmethod.InputMethodManager;
 public class ResetPwdDialog extends Dialog {
   private DialogAuthResetPwdBinding binding;
 
-  public ResetPwdDialog(Context context, String phoneNum) {
+  ResetPwdDialog(Context context, String phoneNum) {
     super(context);
     // 初始化组件
     initComponent(context, phoneNum);
@@ -66,6 +64,7 @@ public class ResetPwdDialog extends Dialog {
     // 让Dialog显示在屏幕的底部
     window.setGravity(Gravity.BOTTOM);
     // 设置窗口出现和窗口隐藏的动画
+    window.setWindowAnimations(R.style.fade_bottom);
     window.getDecorView().setPadding(0, 0, 0, 0);// 设置窗口的padding值为0
     // 设置BottomDialog的宽高属性
     WindowManager.LayoutParams lp = window.getAttributes();
@@ -136,11 +135,6 @@ public class ResetPwdDialog extends Dialog {
         new SendSmsCase(mobile).execute(new PureSubscriber<Object>() {
           /**
            * 失败
-           *
-           * @param errorMsg
-           *          错误信息
-           * @param data
-           *          data为null代表是网络错误
            */
           @Override
           public void onFailure(String errorMsg, Response<Object> data) {
@@ -212,38 +206,5 @@ public class ResetPwdDialog extends Dialog {
     param.setMobile(binding.phoneEt.getText().toString().trim());
     param.setPassword(binding.passwordEt.getText().toString());
     return param;
-  }
-
-  /**
-   * dialog dismiss时键盘不消失的问题
-   * 
-   * @param event
-   * @return
-   */
-  @Override
-  public boolean onTouchEvent(MotionEvent event) {
-    if (isShowing() && shouldCloseOnTouch(getContext(), event)) {
-      InputMethodManager im = (InputMethodManager) getContext()
-          .getSystemService(Context.INPUT_METHOD_SERVICE);
-      im.hideSoftInputFromWindow(binding.phoneEt.getWindowToken(), 0);
-    }
-    return super.onTouchEvent(event);
-  }
-
-  public boolean shouldCloseOnTouch(Context context, MotionEvent event) {
-    if (event.getAction() == MotionEvent.ACTION_DOWN && isOutOfBounds(context, event)
-        && getWindow().peekDecorView() != null) {
-      return true;
-    }
-    return false;
-  }
-
-  private boolean isOutOfBounds(Context context, MotionEvent event) {
-    final int x = (int) event.getX();
-    final int y = (int) event.getY();
-    final int slop = ViewConfiguration.get(context).getScaledWindowTouchSlop();
-    final View decorView = getWindow().getDecorView();
-    return (x < -slop) || (y < -slop) || (x > (decorView.getWidth() + slop))
-        || (y > (decorView.getHeight() + slop));
   }
 }

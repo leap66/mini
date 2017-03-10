@@ -3,8 +3,8 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/theme</item>
+        <item name="colorPrimaryDark">@color/theme</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
@@ -25,7 +25,9 @@
         <item name="android:maxHeight">50dip</item>
         <item name="android:minHeight">8dip</item>
         <item name="android:indeterminateOnly">false</item>
-        <item name="android:indeterminateDrawable">@android:drawable/progress_indeterminate_horizontal</item>
+        <item name="android:indeterminateDrawable">
+            @android:drawable/progress_indeterminate_horizontal
+        </item>
         <item name="android:progressDrawable">@drawable/update_progress</item>
     </style>
 
@@ -39,5 +41,16 @@
         <item name="android:backgroundDimEnabled">true</item>
     </style>
 
+    <!--进入动画 上进上出-->
+    <style name="fade_top">
+        <item name="android:windowEnterAnimation">@anim/fade_enter_top</item>
+        <item name="android:windowExitAnimation">@anim/fade_exit_top</item>
+    </style>
+
+    <!--进入动画 下进下出-->
+    <style name="fade_bottom">
+        <item name="android:windowEnterAnimation">@anim/fade_enter_bottom</item>
+        <item name="android:windowExitAnimation">@anim/fade_exit_bottom</item>
+    </style>
 
 </resources>
