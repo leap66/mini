@@ -8,8 +8,8 @@ import com.leap.mini.R;
  */
 
 enum DefValue {
-  TXT_SIZE(36), TXT_COLOR(R.color.light_black), RIGHT_IMG(R.mipmap.ic_global_clear), BACKGROUND(
-      0), HINT_COLOR(R.color.gray);
+  TXT_SIZE(36), TXT_COLOR(R.color.text_black), RIGHT_IMG(R.mipmap.ic_global_clear), BACKGROUND(
+      0), HINT_COLOR(R.color.text_grey);
 
   int value;
 

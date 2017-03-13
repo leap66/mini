@@ -29,7 +29,7 @@
                 android:onClick="@{()->presenter.onCancel()}"
                 android:padding="15dp"
                 android:text="@string/cancel"
-                android:textColor="@color/text_warmGray"
+                android:textColor="@color/text_warm"
                 android:textSize="@dimen/normal_text_size" />
 
             <TextView
@@ -53,9 +53,9 @@
                 android:textSize="@dimen/normal_text_size" />
         </LinearLayout>
 
-        <include layout="@layout/division_line" />
+        <View style="@style/divider_line" />
 
-        <include layout="@layout/division_line" />
+        <View style="@style/divider_line" />
 
         <LinearLayout
             android:id="@+id/form_layout"
@@ -94,7 +94,7 @@
 
             </LinearLayout>
 
-            <include layout="@layout/division_line" />
+            <View style="@style/divider_line" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -124,7 +124,7 @@
 
             </LinearLayout>
 
-            <include layout="@layout/division_line" />
+            <View style="@style/divider_line" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -154,7 +154,7 @@
 
             </LinearLayout>
 
-            <include layout="@layout/division_line" />
+            <View style="@style/divider_line" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -202,7 +202,7 @@
 
             </LinearLayout>
 
-            <include layout="@layout/division_line" />
+            <View style="@style/divider_line" />
         </LinearLayout>
     </LinearLayout>
 </layout>

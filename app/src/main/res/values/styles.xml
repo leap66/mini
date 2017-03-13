@@ -1,25 +1,5 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/theme</item>
-        <item name="colorPrimaryDark">@color/theme</item>
-        <item name="colorAccent">@color/colorAccent</item>
-    </style>
-
-    <!--dialog-->
-    <style name="alert_dialog" parent="android:Theme.Dialog">
-        <item name="android:windowIsFloating">true</item>
-        <item name="android:windowIsTranslucent">false</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowFullscreen">false</item>
-        <item name="android:windowBackground">@color/float_transparent</item>
-        <item name="android:windowAnimationStyle">@null</item>
-        <item name="android:backgroundDimEnabled">true</item>
-        <item name="android:backgroundDimAmount">0.4</item>
-    </style>
-
     <!--更新进度条-->
     <style name="MyProgressBarStyle" parent="@android:style/Widget.ProgressBar.Horizontal">
         <item name="android:maxHeight">50dip</item>
@@ -39,18 +19,6 @@
         <item name="android:background">@android:color/transparent</item>
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:backgroundDimEnabled">true</item>
-    </style>
-
-    <!--进入动画 上进上出-->
-    <style name="fade_top">
-        <item name="android:windowEnterAnimation">@anim/fade_enter_top</item>
-        <item name="android:windowExitAnimation">@anim/fade_exit_top</item>
-    </style>
-
-    <!--进入动画 下进下出-->
-    <style name="fade_bottom">
-        <item name="android:windowEnterAnimation">@anim/fade_enter_bottom</item>
-        <item name="android:windowExitAnimation">@anim/fade_exit_bottom</item>
     </style>
 
 </resources>
