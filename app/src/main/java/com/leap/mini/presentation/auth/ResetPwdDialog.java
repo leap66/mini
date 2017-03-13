@@ -36,9 +36,10 @@ public class ResetPwdDialog extends Dialog {
   private DialogAuthResetPwdBinding binding;
 
   ResetPwdDialog(Context context, String phoneNum) {
-    super(context);
+    super(context, R.style.alert_dialog);
     // 初始化组件
-    initComponent(context, phoneNum);
+    initComponent(context);
+    loadData(phoneNum);
     // 事件监听处理
     createEventHandler();
   }
@@ -52,14 +53,10 @@ public class ResetPwdDialog extends Dialog {
   /**
    * 初始化组件
    */
-  private void initComponent(Context context, String phoneNum) {
+  private void initComponent(Context context) {
     binding = DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.dialog_auth_reset_pwd,
         null, false);
     binding.setPresenter(new Presenter());
-    // 点击空白区域可以取消dialog
-    this.setCanceledOnTouchOutside(true);
-    // 点击back键可以取消dialog
-    this.setCancelable(true);
     Window window = this.getWindow();
     // 让Dialog显示在屏幕的底部
     window.setGravity(Gravity.BOTTOM);
@@ -71,6 +68,9 @@ public class ResetPwdDialog extends Dialog {
     lp.width = WindowManager.LayoutParams.MATCH_PARENT;
     lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
     window.setAttributes(lp);
+  }
+
+  private void loadData(String phoneNum) {
     String phone;
     if (!IsEmpty.string(phoneNum)) {
       phone = phoneNum;
@@ -79,7 +79,7 @@ public class ResetPwdDialog extends Dialog {
     }
     if (!IsEmpty.string(phone)) {
       binding.phoneEt.setText(phone);
-      binding.phoneEt.getClearEditText().setSelection(phone.length());
+      binding.phoneEt.setSelection(phone.length());
       binding.passwordEt.setFocusable(true);
       binding.passwordEt.setFocusableInTouchMode(true);
       binding.passwordEt.requestFocus();
@@ -95,7 +95,7 @@ public class ResetPwdDialog extends Dialog {
    * 事件监听处理
    */
   private void createEventHandler() {
-    binding.phoneEt.addEditTextChangedListener(new TextChangedListener() {
+    binding.phoneEt.addTextChangedListener(new TextChangedListener() {
 
       @Override
       public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -156,6 +156,8 @@ public class ResetPwdDialog extends Dialog {
       if (isValid()) {
         RegisterRequest param = getUserData();
         String code = binding.codeEt.getText().toString().trim();
+        ToastUtil.toastFailure(getContext(), R.string.login_pwd_reset_failure);
+        dismiss();
       }
     }
 

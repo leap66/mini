@@ -85,9 +85,9 @@ public class RegisterActivity extends BaseActivity {
   public RegisterRequest getParam() {
     RegisterRequest param = new RegisterRequest();
     param.setId(UUID.randomUUID().toString());
-    param.setMobile(binding.phoneEt.getTxt());
-    param.setName(binding.realNameEt.getTxt());
-    param.setPassword(binding.passwordEt.getTxt());
+    param.setMobile(binding.phoneEt.getText().toString());
+    param.setName(binding.realNameEt.getText().toString());
+    param.setPassword(binding.passwordEt.getText().toString());
     return param;
   }
 
@@ -118,14 +118,6 @@ public class RegisterActivity extends BaseActivity {
           @Override
           public void onSuccess(Response<Object> response) {
             new SendSmsCase(mobile).execute(new PureSubscriber<Object>() {
-              /**
-               * 失败
-               *
-               * @param errorMsg
-               *          错误信息
-               * @param data
-               *          data为null代表是网络错误
-               */
               @Override
               public void onFailure(String errorMsg, Response<Object> data) {
                 DialogUtil.showError(RegisterActivity.this, errorMsg).show();
@@ -149,27 +141,14 @@ public class RegisterActivity extends BaseActivity {
      */
     public void onRegister() {
       if (isValid()) {
-        String code = binding.codeEt.getTxt();
+        String code = binding.codeEt.getText().toString();
         new RegisterCase(RegisterActivity.this, code, getParam())
             .execute(new PureSubscriber<Object>() {
-              /**
-               * 失败
-               *
-               * @param errorMsg
-               *          错误信息
-               * @param data
-               *          data为null代表是网络错误
-               */
               @Override
               public void onFailure(String errorMsg, Response<Object> data) {
                 DialogUtil.showError(RegisterActivity.this, errorMsg).show();
               }
 
-              /**
-               * 成功
-               *
-               * @param response
-               */
               @Override
               public void onSuccess(Response<Object> response) {
                 Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
@@ -181,10 +160,6 @@ public class RegisterActivity extends BaseActivity {
             });
       }
 
-    }
-
-    public void onAgreement() {
-      binding.agreeCb.setChecked(!binding.agreeCb.isChecked());
     }
 
     /**

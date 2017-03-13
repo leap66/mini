@@ -4,6 +4,7 @@ import com.leap.mini.R;
 import com.leap.mini.databinding.ItemToastBinding;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.databinding.DataBindingUtil;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -53,10 +54,10 @@ public class ToastUtil {
     toast.setGravity(Gravity.CENTER, 0, 0);
     if (0 == imageResource) {
       binding.imageIv.setVisibility(View.GONE);
-    } else {
-      binding.imageIv.setImageResource(imageResource);
     }
+    binding.imageIv.setImageResource(imageResource);
     binding.titleTv.setText(text);
+    binding.titleTv.setMaxWidth(Resources.getSystem().getDisplayMetrics().widthPixels * 3 / 5);
     toast.setView(binding.getRoot());
     toast.show();
   }

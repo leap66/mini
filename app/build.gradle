@@ -25,12 +25,12 @@ android {
     buildToolsVersion "25.0.1"
     defaultConfig {
         applicationId "com.leap.mini"
-        minSdkVersion 15
+        minSdkVersion 17
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        buildConfigField("String", "SERVER_URL", System.getenv("SERVER_URL") ?: "\"https://auth-test.1000sails.com/dpos-auh-web/s/\"")
+        buildConfigField("String", "SERVER_URL", System.getenv("SERVER_URL") ?: "\"https://auth-test.1000sails.com/dpos-auth-web/s/\"")
         buildConfigField("String", "AGREEMENT_URL", System.getenv("AGREEMENT_URL") ?: "\"http://www.1000sails.com/test/resources/agreement_m.html\"")
         buildConfigField("String", "UPDATE_URL", "\"https://app-publisher.1000sails.com:8310/app-publisher-web/s/\"")
     }
@@ -91,6 +91,7 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile project(':leap')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })

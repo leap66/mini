@@ -13,6 +13,7 @@ import com.leap.mini.util.DialogUtil;
 import com.leap.mini.util.IsEmpty;
 import com.leap.mini.util.ToastUtil;
 import com.leap.mini.widget.cleartextfield.validator.FieldValidateError;
+import com.mini.leap.TestStore;
 
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
@@ -126,6 +127,7 @@ public class LoginActivity extends BaseActivity {
      * 忘记密码
      */
     public void onForgetPassword() {
+      TestStore.print();
       new ResetPwdDialog(LoginActivity.this, binding.phoneEt.getText().toString().trim()).show();
     }
 

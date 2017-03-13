@@ -199,7 +199,7 @@ public class ProgressWheel extends View {
 
       int circleDiameter = Math.min(minValue, circleRadius * 2 - barWidth * 2);
 
-      // Calc the Offset if needed for centering the wheel in the available space
+      // Calc the Offset if needed for centering the wheel in the available space_level
       int xOffset = (layout_width - paddingLeft - paddingRight - circleDiameter) / 2 + paddingLeft;
       int yOffset = (layout_height - paddingTop - paddingBottom - circleDiameter) / 2 + paddingTop;
 

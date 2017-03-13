@@ -1,0 +1,46 @@
+<resources>
+
+    <!-- 自定义APP主题 -->
+    <style name="MainTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/theme</item>
+        <item name="colorPrimaryDark">@color/theme</item>
+        <item name="colorAccent">@color/theme_deep</item>
+        <item name="actionOverflowMenuStyle">@style/OverflowMenu</item>
+    </style>
+
+    <!-- 自定义菜单 -->
+    <style name="OverflowMenu" parent="Widget.AppCompat.PopupMenu.Overflow">
+        <item name="overlapAnchor">false</item>
+        <item name="android:dropDownVerticalOffset">4dp</item>
+        <item name="android:layout_marginRight">0dp</item>
+        <item name="android:popupBackground">@color/text_white</item>
+        <item name="android:inAnimation">@anim/fade_top_enter</item>
+        <item name="android:outAnimation">@anim/fade_top_exit</item>
+    </style>
+
+    <!-- Dialog设置全屏幕宽度 -->
+    <style name="style_dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowBackground">@color/text_white</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:scrollHorizontally">true</item>
+    </style>
+
+    <!--Dialog 从下至上 -->
+    <style name="fade_bottom">
+        <item name="android:windowEnterAnimation">@anim/fade_bottom_enter</item>
+        <item name="android:windowExitAnimation">@anim/fade_bottom_exit</item>
+    </style>
+
+    <!--Dialog 从上至下 -->
+    <style name="fade_top">
+        <item name="android:windowEnterAnimation">@anim/fade_top_enter</item>
+        <item name="android:windowExitAnimation">@anim/fade_top_exit</item>
+    </style>
+
+    <!-- 瞬间弹出 -->
+    <style name="fade_moment">
+        <item name="android:windowEnterAnimation">@anim/fade_moment</item>
+    </style>
+</resources>

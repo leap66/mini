@@ -16,11 +16,7 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
+        <include layout="@layout/space_level" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -30,17 +26,14 @@
             android:textColor="@color/red"
             android:textSize="@dimen/largest_text_size" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
+        <include layout="@layout/space_level" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:background="@color/background"
+            android:background="@drawable/bg_background_middle"
             android:orientation="vertical">
 
             <com.leap.mini.widget.cleartextfield.ClearTextField
@@ -50,11 +43,13 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:maxLines="1"
-                app:edit_errMsg="@string/register_phone_empty"
+                app:edit_errMsg="@string/zero"
                 app:edit_hint="@string/register_phone"
                 app:edit_inputType="phone"
                 app:edit_maxLength="11"
                 app:edit_text_size="@dimen/large_text_size" />
+
+            <include layout="@layout/division_line" />
 
             <com.leap.mini.widget.cleartextfield.ClearTextField
                 android:id="@+id/password_et"
@@ -68,36 +63,22 @@
                 app:edit_maxLength="16"
                 app:edit_text_size="@dimen/large_text_size" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:background="@color/line" />
-
         </LinearLayout>
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
+        <include layout="@layout/space_level" />
 
         <Button
-            android:id="@+id/login_btn"
             android:layout_width="match_parent"
             android:layout_height="59dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:background="@color/theme"
+            android:background="@drawable/btn_theme_small"
             android:onClick="@{()->presenter.onLogin()}"
             android:text="@string/login"
             android:textColor="@color/text_white"
             android:textSize="@dimen/large_text_size" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
+        <include layout="@layout/space_level" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -132,8 +113,6 @@
                 android:text="@string/register_new_user_register"
                 android:textColor="@color/text_white"
                 android:textSize="@dimen/normal_text_size" />
-
         </LinearLayout>
-
     </LinearLayout>
 </layout>
