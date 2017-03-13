@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">123</string>
     <string name="ok">知道了</string>
-    <string name="load_data">加载数据中...</string>
+    <string name="load_data">数据加载中···</string>
     <!--更新-->
     <string name="update_downloading">正在下载</string>
     <string name="update_download">马上更新</string>

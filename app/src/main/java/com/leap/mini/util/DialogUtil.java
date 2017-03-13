@@ -1,7 +1,7 @@
 package com.leap.mini.util;
 
-import com.leap.mini.widget.sweetAlert.SweetAlertDialog;
 import com.leap.mini.R;
+import com.leap.mini.widget.sweetAlert.SweetAlertDialog;
 
 import android.content.Context;
 import android.support.v4.content.ContextCompat;
@@ -30,7 +30,7 @@ public class DialogUtil {
   public static SweetAlertDialog getProgressDialog(Context context, int stringResourceId) {
     SweetAlertDialog dialog = new SweetAlertDialog(context, SweetAlertDialog.PROGRESS_TYPE);
     dialog.setTitleText(context.getResources().getString(stringResourceId));
-    dialog.getProgressHelper().setBarColor(ContextCompat.getColor(context, R.color.colorPrimary));
+    dialog.getProgressHelper().setBarColor(ContextCompat.getColor(context, R.color.theme_opaque));
     return dialog;
   }
 
@@ -40,7 +40,7 @@ public class DialogUtil {
   public static SweetAlertDialog getProgressDialog(Context context, String string) {
     SweetAlertDialog dialog = new SweetAlertDialog(context, SweetAlertDialog.PROGRESS_TYPE);
     dialog.setTitleText(string);
-    dialog.getProgressHelper().setBarColor(ContextCompat.getColor(context, R.color.colorPrimary));
+    dialog.getProgressHelper().setBarColor(ContextCompat.getColor(context, R.color.theme_opaque));
     return dialog;
   }
 

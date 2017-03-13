@@ -1,10 +1,16 @@
 package com.leap.mini.widget.pullrefresh;
 
+import com.leap.mini.R;
+import com.leap.mini.widget.pullrefresh.base.layout.BaseFooterView;
+import com.leap.mini.widget.pullrefresh.base.layout.BaseHeaderView;
+import com.leap.mini.widget.pullrefresh.base.layout.PullRefreshLayout;
+import com.leap.mini.widget.pullrefresh.base.support.impl.Loadable;
+import com.leap.mini.widget.pullrefresh.base.support.impl.Refreshable;
+import com.leap.mini.widget.pullrefresh.base.support.utils.CanPullUtil;
+
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Build;
-import android.support.annotation.DrawableRes;
-import android.support.annotation.StringRes;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.LinearLayoutManager;
@@ -16,19 +22,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
-import android.widget.TextView;
-
-import com.leap.mini.widget.pullrefresh.base.layout.BaseHeaderView;
-import com.leap.mini.widget.pullrefresh.base.support.impl.Loadable;
-import com.leap.mini.widget.pullrefresh.base.support.impl.Refreshable;
-import com.leap.mini.widget.pullrefresh.base.support.utils.CanPullUtil;
-import com.leap.mini.R;
-import com.leap.mini.widget.pullrefresh.base.layout.BaseFooterView;
-import com.leap.mini.widget.pullrefresh.base.layout.PullRefreshLayout;
 
 /**
  * 定义了下拉刷新和上推加载
@@ -37,16 +32,10 @@ import com.leap.mini.widget.pullrefresh.base.layout.PullRefreshLayout;
 public class DefaultRefreshLayout extends PullRefreshLayout {
 
   private DefaultPullLayout mCenterViewContainer;
-  private View mEmptyView;
-  private View mErrorView;
   private View contentView;
   private int headerIndex = -1;
   private int footerIndex = -1;
   private boolean immediately = true;
-  private LinearLayout emptyLayout;
-  private ImageView emptyImg;
-  private TextView emptyTxt;
-  private TextView emptyTxtRed;
 
   public DefaultRefreshLayout(Context context) {
     this(context, null);
@@ -58,18 +47,8 @@ public class DefaultRefreshLayout extends PullRefreshLayout {
 
   public DefaultRefreshLayout(Context context, AttributeSet attrs, int defStyle) {
     super(context, attrs, defStyle);
-
     setChildrenDrawingOrderEnabled(true);
-
     mCenterViewContainer = new DefaultPullLayout(context);
-    mEmptyView = LayoutInflater.from(getContext()).inflate(R.layout.widget_pullrefresh_empty,
-        mCenterViewContainer, false);
-    emptyImg = (ImageView) mEmptyView.findViewById(R.id.img);
-    emptyTxt = (TextView) mEmptyView.findViewById(R.id.txt);
-    emptyTxtRed = (TextView) mEmptyView.findViewById(R.id.txt_red);
-    mErrorView = LayoutInflater.from(getContext()).inflate(R.layout.widget_pullrefresh_error,
-        mCenterViewContainer, false);
-    mCenterViewContainer.addView(mEmptyView);
     addView(mCenterViewContainer);
 
     if (attrs != null) {
@@ -94,7 +73,7 @@ public class DefaultRefreshLayout extends PullRefreshLayout {
     } else if (child instanceof Loadable) {
       mFooter.setPullRefreshLayout(this);
     } else if (child instanceof DefaultPullLayout || CanPullUtil.getPullAble(child) == null) {
-      // do nothing
+      // TODO
     } else {
       pullable = CanPullUtil.getPullAble(child);
       mPullView = child;
@@ -104,30 +83,8 @@ public class DefaultRefreshLayout extends PullRefreshLayout {
   }
 
   @Override
-  protected void onLayout(boolean changed, int l, int t, int r, int b) {
-    super.onLayout(changed, l, t, r, b);
-    if (mCenterViewContainer != null && contentView != null) {
-      // mCenterViewContainer.layout(contentView.getLeft(),
-      // contentView.getTop(),
-      // contentView.getRight(), contentView.getBottom());
-    }
-  }
-
-  @Override
   protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
     super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-
-    mEmptyView.measure(
-        View.MeasureSpec.makeMeasureSpec(getMeasuredWidth() - getPaddingLeft() - getPaddingRight(),
-            View.MeasureSpec.EXACTLY),
-        View.MeasureSpec.makeMeasureSpec(getMeasuredHeight() - getPaddingTop() - getPaddingBottom(),
-            View.MeasureSpec.EXACTLY));
-    mErrorView.measure(
-        View.MeasureSpec.makeMeasureSpec(getMeasuredWidth() - getPaddingLeft() - getPaddingRight(),
-            View.MeasureSpec.EXACTLY),
-        View.MeasureSpec.makeMeasureSpec(getMeasuredHeight() - getPaddingTop() - getPaddingBottom(),
-            View.MeasureSpec.EXACTLY));
-
     // 记录头尾位置
     headerIndex = -1;
     for (int index = 0; index < getChildCount(); index++) {
@@ -266,15 +223,12 @@ public class DefaultRefreshLayout extends PullRefreshLayout {
     } else if (mPullView instanceof AbsListView) {
       final AbsListView absListView = (AbsListView) mPullView;
       int count = absListView.getAdapter().getCount();
-      int fristPos = absListView.getFirstVisiblePosition();
-      if (fristPos == 0 && absListView.getChildAt(0).getTop() >= absListView.getPaddingTop()) {
+      int firstPos = absListView.getFirstVisiblePosition();
+      if (firstPos == 0 && absListView.getChildAt(0).getTop() >= absListView.getPaddingTop()) {
         return false;
       }
       int lastPos = absListView.getLastVisiblePosition();
-      if (lastPos > 0 && count > 0 && lastPos == count - 1) {
-        return true;
-      }
-      return false;
+      return lastPos > 0 && count > 0 && lastPos == count - 1;
     } else if (mPullView instanceof ScrollView) {
       ScrollView scrollView = (ScrollView) mPullView;
       View view = (View) scrollView.getChildAt(scrollView.getChildCount() - 1);
@@ -286,7 +240,7 @@ public class DefaultRefreshLayout extends PullRefreshLayout {
       }
     } else if (mPullView instanceof NestedScrollView) {
       NestedScrollView nestedScrollView = (NestedScrollView) mPullView;
-      View view = (View) nestedScrollView.getChildAt(nestedScrollView.getChildCount() - 1);
+      View view = nestedScrollView.getChildAt(nestedScrollView.getChildCount() - 1);
       if (view != null) {
         int diff = (view.getBottom()
             - (nestedScrollView.getHeight() + nestedScrollView.getScrollY()));
@@ -298,49 +252,9 @@ public class DefaultRefreshLayout extends PullRefreshLayout {
     return false;
   }
 
-  public void showEmpty() {
-    this.showView(mEmptyView);
-  }
-
-  public void showEmpty(@DrawableRes int imgRes, String msg) {
-    showEmpty(imgRes, msg, null);
-  }
-
-  public void showEmpty(@DrawableRes int imgRes, String msg, String msg2) {
-    emptyImg.setImageDrawable(getContext().getResources().getDrawable(imgRes));
-    emptyTxt.setText(msg);
-    emptyTxtRed.setText(msg2);
-    showEmpty();
-  }
-
-  public void showEmpty(@DrawableRes int imgRes, @StringRes int msgRes) {
-    showEmpty(imgRes, getContext().getString(msgRes));
-  }
-
-  public void showEmpty(@DrawableRes int imgRes, @StringRes int msgRes, @StringRes int msgRes2) {
-    showEmpty(imgRes, getContext().getString(msgRes), getContext().getString(msgRes2));
-  }
-
-  public void setEmptyState() {
-    setHasFooter(false);
-    setHasHeader(false);
-  }
-
   public void resume() {
     setHasHeader(true);
     setHasFooter(true);
-  }
-
-  public void setEmptyView(View view) {
-    this.mEmptyView = view;
-  }
-
-  public void showError(String message) {
-    if (message != null) {
-      TextView errorMsg = (TextView) mErrorView.findViewById(R.id.errorMsg);
-      errorMsg.setText(message);
-    }
-    this.showView(mErrorView);
   }
 
   public void showView(View view) {
@@ -364,7 +278,6 @@ public class DefaultRefreshLayout extends PullRefreshLayout {
   }
 
   public void hideView() {
-    mCenterViewContainer.removeView(emptyLayout);
     mCenterViewContainer.setVisibility(View.GONE);
     contentView.setVisibility(View.VISIBLE);
     mPullView = contentView;
@@ -389,10 +302,6 @@ public class DefaultRefreshLayout extends PullRefreshLayout {
 
   /**
    * 立即刷新时，直接显示在目标位置
-   * 
-   * @param startY
-   * @param endY
-   * @return
    */
   public int startMoveTo(float startY, float endY) {
     if (immediately) {
